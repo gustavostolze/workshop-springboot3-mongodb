@@ -1,5 +1,6 @@
 package com.gustavostolze.workshopmongo.services;
 
+import java.time.Instant;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,5 +24,9 @@ public class PostService {
 
 	public List<Post> findByTitle(String text) {
 		return postRepository.searchTitle(text);
+	}
+	
+	public List<Post> fullSearch(String text, Instant dateMin, Instant dateMax) {
+		return postRepository.fullSearch(text, dateMin, dateMax);
 	}
 }
